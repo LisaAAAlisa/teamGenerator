@@ -83,28 +83,28 @@ function getManualInputs() {
         {
             employeeType: "Manager",
             name: "Arthur",
-            id: "4",
+            empID: "4",
             email: "alangham@gmail.com",
             officeNumber: "1"
         },
         {
             employeeType: "Engineer",
             name: "Alisa",
-            id: "3",
+            empID: "3",
             email: "alisa@gmail.com",
             github: "https://github.com/LisaAAAlisa"
         },
         {
             employeeType: "Engineer",
             name: "Jane",
-            id: "1",
+            empID: "1",
             email: "jane@gmail.com",
             github: "https://github.com/LisaAAAlisa"
         },
         {
             employeeType: "Intern",
             name: "Paul",
-            id: "2",
+            empID: "2",
             email: "paul@gmail.com",
             school: "Rice"
         }
@@ -116,13 +116,13 @@ function generateEngteamHtml(inputs) {
     for (i = 0; i < inputs.length; i++) {
         var type = inputs[i].employeeType;
         if (type === "Manager") {
-            employeeObjects.push(new Manager(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].officeNumber));
+            employeeObjects.push(new Manager(inputs[i].name, inputs[i].empID, inputs[i].email, inputs[i].officeNumber));
         }
         else if (type === "Intern") {
-            employeeObjects.push(new Intern(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].school));
+            employeeObjects.push(new Intern(inputs[i].name, inputs[i].empID, inputs[i].email, inputs[i].school));
         }
         else {
-            employeeObjects.push(new Engineer(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].github));
+            employeeObjects.push(new Engineer(inputs[i].name, inputs[i].empID, inputs[i].email, inputs[i].github));
         }
     }
     return employeeObjects;
@@ -134,7 +134,7 @@ function writeEngTeamHTML(engTeamHTML) {
     }
     fs.writeFile(outputPath, engTeamHTML, (err) =>
         err ? console.log(err) : console.log('Success!')
-    );    
+    );
 }
 
 
@@ -144,7 +144,7 @@ var main = async () => {
     // const inputs = getManualInputs();
     const engteam = generateEngteamHtml(inputs);
     const engteamhtml = render(engteam);
-  writeEngTeamHTML(engteamhtml);
+    writeEngTeamHTML(engteamhtml);
 }
 
 
