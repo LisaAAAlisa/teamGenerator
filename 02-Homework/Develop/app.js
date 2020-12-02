@@ -122,7 +122,7 @@ function generateEngteamHtml(inputs) {
             employeeObjects.push(new Intern(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].school));
         }
         else {
-            employeeObjects.push(new Intern(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].github));
+            employeeObjects.push(new Engineer(inputs[i].name, inputs[i].id, inputs[i].email, inputs[i].github));
         }
     }
     return employeeObjects;
