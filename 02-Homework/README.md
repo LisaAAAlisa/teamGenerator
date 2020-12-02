@@ -7,5 +7,5 @@ so that one have quick access to emails and GitHub profiles
 I used NPM Inquirer package to prompt the user for their email, id, and specific information based on their role with the company. *This app runs as a Node CLI to gather information about each employee.
 I used Jest for testing to ensure that everything works.
 
-![](teamgen.png)
-![](readme.gif)
+![](./teamgen.png)
+![](./readme.gif)
